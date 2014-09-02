@@ -12,7 +12,7 @@ $ grep --color -c "Sxl" dmel-all-r5.57-removeFASTA.gff
 
 3. 
 $ head -n5000 dmel-all-r5.57-removeFASTA.gff > dmel-all-r5.57.sm.gff
-$ cut -f3 dmel-all-r5.57.sm.gff | sort | uniq
+$ grep -v "^#" dmel-all-r5.57.sm.gff | cut -f3 | sort | uniq
 
 BAC_cloned_genomic_insert
 CDS
@@ -49,7 +49,7 @@ transposable_element
 transposable_element_insertion_site
 
 4.  
-$ cut -f3 dmel-all-r5.57.sm.gff | sort | uniq -c > features.txt
+$ grep -v "^#" dmel-all-r5.57.sm.gff | cut -f3 | sort | uniq -c > features.txt
 1 BAC_cloned_genomic_insert
  106 CDS
   25 RNAi_reagent
